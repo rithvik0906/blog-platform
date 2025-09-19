@@ -19,7 +19,7 @@ const PostItem = ({ post, showDelete, onDelete }) => {
   return (
     <div className="post-item">
       {post.image && (
-        <img src={`https://blog-platform-hexb.onrender.com${post.image}`} alt="Post" style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem' }} />
+        <img src={`http://localhost:5000${post.image}`} alt="Post" style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem' }} />
       )}
       <h3>{post.title}</h3>
       <p>by {post.author.name}</p>

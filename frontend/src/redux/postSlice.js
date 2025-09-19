@@ -11,7 +11,7 @@ export const likePost = createAsyncThunk('posts/likePost', async (postId, { reje
         'x-auth-token': token,
       },
     };
-  const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/posts/${postId}/like`, {}, config);
+    const res = await axios.post(`http://localhost:5000/api/posts/${postId}/like`, {}, config);
     return { postId, likes: res.data.likes };
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -27,7 +27,7 @@ export const unlikePost = createAsyncThunk('posts/unlikePost', async (postId, { 
         'x-auth-token': token,
       },
     };
-  const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/posts/${postId}/unlike`, {}, config);
+    const res = await axios.post(`http://localhost:5000/api/posts/${postId}/unlike`, {}, config);
     return { postId, likes: res.data.likes };
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -50,7 +50,7 @@ export const fetchMyPosts = createAsyncThunk('posts/fetchMyPosts', async (_, { r
         'x-auth-token': token,
       },
     };
-  const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts/mine`, config);
+    const res = await axios.get('http://localhost:5000/api/posts/mine', config);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -60,7 +60,7 @@ export const fetchMyPosts = createAsyncThunk('posts/fetchMyPosts', async (_, { r
 // Async thunk to fetch all posts
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (_, { rejectWithValue }) => {
   try {
-  const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts`);
+    const res = await axios.get('http://localhost:5000/api/posts');
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -76,7 +76,7 @@ export const createPost = createAsyncThunk('posts/createPost', async (postData, 
         'x-auth-token': token,
       },
     };
-  const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/posts`, postData, config);
+    const res = await axios.post('http://localhost:5000/api/posts', postData, config);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -92,7 +92,7 @@ export const deletePost = createAsyncThunk('posts/deletePost', async (postId, { 
         'x-auth-token': token,
       },
     };
-  await axios.delete(`${process.env.REACT_APP_API_URL}/api/posts/${postId}`, config);
+    await axios.delete(`http://localhost:5000/api/posts/${postId}`, config);
     return postId;
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -102,7 +102,7 @@ export const deletePost = createAsyncThunk('posts/deletePost', async (postId, { 
 // Async thunk to fetch a single post by ID
 export const fetchPostById = createAsyncThunk('posts/fetchPostById', async (postId, { rejectWithValue }) => {
   try {
-  const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts/${postId}`);
+    const res = await axios.get(`http://localhost:5000/api/posts/${postId}`);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -119,7 +119,7 @@ export const updatePost = createAsyncThunk('posts/updatePost', async ({ postId, 
         'x-auth-token': token,
       },
     };
-  const res = await axios.put(`${process.env.REACT_APP_API_URL}/api/posts/${postId}`, postData, config);
+    const res = await axios.put(`http://localhost:5000/api/posts/${postId}`, postData, config);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
