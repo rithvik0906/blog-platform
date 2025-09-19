@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPosts } from '../redux/postSlice';
-import PostItem from './PostItem'; // We will create this component next
+import PostItem from './PostItem';
 
 const PostList = () => {
   const dispatch = useDispatch();
@@ -14,12 +14,13 @@ const PostList = () => {
   if (loading) return <div>Loading posts...</div>;
   if (error) return <div>Error: {error}</div>;
 
+  // Ensure posts is always an array before mapping
+  const safePosts = Array.isArray(posts) ? posts : [];
+
   return (
     <div className="post-list">
-      {posts.length > 0 ? (
-        posts.map((post) => (
-          <PostItem key={post._id} post={post} />
-        ))
+      {safePosts.length > 0 ? (
+        safePosts.map((post) => <PostItem key={post._id} post={post} />)
       ) : (
         <h2>No posts found. Create one!</h2>
       )}
