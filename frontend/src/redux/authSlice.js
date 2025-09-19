@@ -12,7 +12,7 @@ const initialState = {
 // Async thunk for user registration
 export const registerUser = createAsyncThunk('auth/registerUser', async (userData, { rejectWithValue }) => {
   try {
-    const res = await axios.post('http://localhost:5000/api/auth/register', userData);
+    const res = await axios.post('https://blog-platform-hexb.onrender.com/api/auth/register', userData);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -22,7 +22,7 @@ export const registerUser = createAsyncThunk('auth/registerUser', async (userDat
 // Async thunk for user login
 export const loginUser = createAsyncThunk('auth/loginUser', async (userData, { rejectWithValue }) => {
   try {
-    const res = await axios.post('http://localhost:5000/api/auth/login', userData);
+    const res = await axios.post('https://blog-platform-hexb.onrender.com/api/auth/login', userData);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);

@@ -39,7 +39,7 @@ const MyPosts = () => {
           return (
             <div key={post._id} className="post-item" style={{ position: 'relative', marginBottom: '2rem', border: '1px solid #eee', borderRadius: '8px', padding: '1rem' }}>
               {post.image && (
-                <img src={`http://localhost:5000${post.image}`} alt="Post" style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem' }} />
+                <img src={`https://blog-platform-hexb.onrender.com${post.image}`} alt="Post" style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem' }} />
               )}
               <h3>{post.title}</h3>
               <p>by {typeof post.author === 'object' ? post.author.name : 'You'}</p>

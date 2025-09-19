@@ -43,7 +43,7 @@ const Profile = () => {
       const config = {
         headers: { 'x-auth-token': token },
       };
-      await axios.put(`http://localhost:5000/api/auth/profile`, formData, config);
+      await axios.put(`https://blog-platform-hexb.onrender.com/api/auth/profile`, formData, config);
   setSuccess('Profile updated successfully!');
   setEditMode(false);
   // Update Redux user state and localStorage

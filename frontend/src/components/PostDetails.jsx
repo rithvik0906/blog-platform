@@ -34,7 +34,7 @@ const PostDetails = () => {
   return (
     <div className="post-details">
       {currentPost.image && (
-        <img src={`http://localhost:5000${currentPost.image}`} alt="Post" style={{ width: '100%', maxHeight: '350px', objectFit: 'cover', borderRadius: '10px', marginBottom: '1.5rem' }} />
+        <img src={`https://blog-platform-hexb.onrender.com${currentPost.image}`} alt="Post" style={{ width: '100%', maxHeight: '350px', objectFit: 'cover', borderRadius: '10px', marginBottom: '1.5rem' }} />
       )}
       <h2>{currentPost.title}</h2>
       <p>by {currentPost.author.name}</p>
