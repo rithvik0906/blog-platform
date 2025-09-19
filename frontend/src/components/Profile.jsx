@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -44,7 +43,7 @@ const Profile = () => {
       const config = {
         headers: { 'x-auth-token': token },
       };
-      const res = await axios.put(`http://localhost:5000/api/auth/profile`, formData, config);
+      await axios.put(`http://localhost:5000/api/auth/profile`, formData, config);
   setSuccess('Profile updated successfully!');
   setEditMode(false);
   // Update Redux user state and localStorage

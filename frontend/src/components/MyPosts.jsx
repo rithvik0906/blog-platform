@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMyPosts, deletePost, likePost, unlikePost } from '../redux/postSlice';
-import PostItem from './PostItem';
 
 const MyPosts = () => {
   const dispatch = useDispatch();
