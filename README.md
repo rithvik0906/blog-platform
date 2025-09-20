@@ -92,10 +92,10 @@ blog-platform/
    cd blog-platform
    ```
 2. Install backend dependencies:
-  ```bash
+   ```bash
    cd backend
    npm install
-  ```
+   ```
 3. Install frontend dependencies:
    ```bash
    cd ../frontend
@@ -118,6 +118,3 @@ blog-platform/
   npm start
   ```
 ### 📸 Screenshots
-
-
-## 📂 Project Structure
