@@ -117,4 +117,32 @@ blog-platform/
   cd frontend
   npm start
   ```
-### 📸 Screenshots
+---
+## 📸 Screenshots
+- Register and Login:
+  ![Register](outputs/register.png)
+  ![Login](outputs/login.png)
+- Create Post:
+  ![Create](outputs/create.png)
+- Home:
+  ![Blogs](outputs/blogs.png)
+- View Posts (Can edit and delete):
+  ![MyPosts](outputs/posts.png)
+- Profile:
+  ![Profile](outputs/user_profile.png)
+---
+## 🚀 Future Improvements
+- Enhanced Authentication:
+  - Add Google / GitHub OAuth login
+  - Add password reset & email verification
+- Comments System:
+  - Allow users to comment on posts
+  - Nested replies & upvotes for better engagement
+- Search & Filters:
+  - Full-text search for posts
+  - Filter by categories, tags, or author
+- Notifications:
+  - Real-time notifications for likes, comments, and follows
+- Profile Enhancements:
+  - pload profile pictures (with cloud storage like AWS S3)
+- Mobile App Version 
