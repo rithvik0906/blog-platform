@@ -144,5 +144,6 @@ blog-platform/
 - Notifications:
   - Real-time notifications for likes, comments, and follows
 - Profile Enhancements:
-  - pload profile pictures (with cloud storage like AWS S3)
+  - upload profile pictures (with cloud storage like AWS S3)
 - Mobile App Version 
+
