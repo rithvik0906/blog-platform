@@ -93,7 +93,7 @@ blog-platform/
    ```
 2. Install backend dependencies:
    ```bash
-   cd ../backend
+   cd backend
    npm install
    ```
 3. Install frontend dependencies:
@@ -117,6 +117,10 @@ blog-platform/
   cd frontend
   npm start
   ```
+---
+## 🌍 Go Live
+
+[Blog Platform](https://blog-platform-rithvik.netlify.app/)
 ---
 ## 📸 Screenshots
 - Register and Login:
@@ -146,6 +150,3 @@ blog-platform/
 - Profile Enhancements:
   - upload profile pictures (with cloud storage like AWS S3)
 - Mobile App Version 
-
-
-
