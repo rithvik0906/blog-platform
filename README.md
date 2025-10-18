@@ -88,7 +88,7 @@ blog-platform/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/blog-platform.git
+   git clone https://github.com/rithvik0906/blog-platform.git
    cd blog-platform
    ```
 2. Install backend dependencies:
@@ -146,5 +146,6 @@ blog-platform/
 - Profile Enhancements:
   - upload profile pictures (with cloud storage like AWS S3)
 - Mobile App Version 
+
 
 
