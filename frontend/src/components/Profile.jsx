@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
+const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const Profile = () => {
   const dispatch = useDispatch();
   const { user, token } = useSelector((state) => state.auth);
@@ -44,7 +46,7 @@ const Profile = () => {
       const config = {
         headers: { 'x-auth-token': token },
       };
-      const res = await axios.put(`http://localhost:5000/api/auth/profile`, formData, config);
+  const res = await axios.put(`${API_BASE}/api/auth/profile`, formData, config);
   setSuccess('Profile updated successfully!');
   setEditMode(false);
   // Update Redux user state and localStorage

@@ -3,7 +3,8 @@
 // Async thunk to fetch a single post
 export const fetchPostById = createAsyncThunk('posts/fetchPostById', async (postId, { rejectWithValue }) => {
   try {
-    const res = await axios.get(`https://blog-platform-hexb.onrender.com/${postId}`);
+  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const res = await axios.get(`${API_BASE}/${postId}`);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
@@ -22,7 +23,8 @@ export const updatePost = createAsyncThunk('posts/updatePost', async ({ postId, 
         'x-auth-token': token,
       },
     };
-    const res = await axios.put(`https://blog-platform-hexb.onrender.com/${postId}`, postData, config);
+  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const res = await axios.put(`${API_BASE}/${postId}`, postData, config);
     return res.data;
   } catch (err) {
     return rejectWithValue(err.response.data);
