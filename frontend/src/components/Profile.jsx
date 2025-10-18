@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
+import { updateUser } from '../redux/authSlice';
 
 const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
@@ -46,13 +47,13 @@ const Profile = () => {
       const config = {
         headers: { 'x-auth-token': token },
       };
-  const res = await axios.put(`${API_BASE}/api/auth/profile`, formData, config);
-  setSuccess('Profile updated successfully!');
-  setEditMode(false);
-  // Update Redux user state and localStorage
-  const updatedUser = { ...user, name: formData.name, bio: formData.bio };
-  dispatch({ type: 'auth/updateUser', payload: updatedUser });
-  localStorage.setItem('user', JSON.stringify(updatedUser));
+      const res = await axios.put(`${API_BASE}/api/auth/profile`, formData, config);
+      setSuccess('Profile updated successfully!');
+      setEditMode(false);
+      // Update Redux user state and localStorage
+      const updatedUser = { ...user, ...res.data };
+      dispatch(updateUser(updatedUser));
+      localStorage.setItem('user', JSON.stringify(updatedUser));
     } catch (err) {
       setError(err.response?.data?.msg || 'Failed to update profile');
     } finally {
